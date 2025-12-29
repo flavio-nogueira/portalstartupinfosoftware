@@ -115,10 +115,18 @@
     flex-wrap: wrap;
     gap: 1rem;
 
-    p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.9rem;
+    .footer-copyright {
+      p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      .last-update {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 0.3rem;
+      }
     }
 
     .footer-links {

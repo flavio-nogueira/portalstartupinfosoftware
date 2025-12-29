@@ -1,5 +1,6 @@
 import { Component, effect } from '@angular/core';
 import { TranslationService } from '../../services/translation';
+import { buildInfo } from '../../../environments/build-info';
 
 @Component({
   selector: 'app-footer',
@@ -8,6 +9,9 @@ import { TranslationService } from '../../services/translation';
   styleUrl: './footer.scss',
 })
 export class Footer {
+  currentYear = new Date().getFullYear();
+  lastUpdate = buildInfo.buildDate;
+
   constructor(public translationService: TranslationService) {
     effect(() => {
       this.translationService.getCurrentLanguage();

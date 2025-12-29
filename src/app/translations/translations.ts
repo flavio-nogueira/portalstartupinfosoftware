@@ -150,9 +150,10 @@ export const translations = {
       design: 'UI/UX Design',
       contactTitle: 'Contato',
       location: 'São Paulo, SP - Brasil',
-      copyright: '2025 Startup Infosoftware Ltda. Todos os direitos reservados.',
+      copyright: 'Startup Infosoftware Ltda. Todos os direitos reservados.',
       privacy: 'Política de Privacidade',
-      terms: 'Termos de Uso'
+      terms: 'Termos de Uso',
+      lastUpdate: 'Última atualização'
     },
     privacy: {
       title: 'Política de Privacidade',
@@ -574,9 +575,10 @@ export const translations = {
       design: 'Diseño UI/UX',
       contactTitle: 'Contacto',
       location: 'São Paulo, SP - Brasil',
-      copyright: '2025 Startup Infosoftware Ltda. Todos los derechos reservados.',
+      copyright: 'Startup Infosoftware Ltda. Todos los derechos reservados.',
       privacy: 'Política de Privacidad',
-      terms: 'Términos de Uso'
+      terms: 'Términos de Uso',
+      lastUpdate: 'Última actualización'
     },
     landingPage: {
       hero: {
@@ -948,9 +950,10 @@ export const translations = {
       design: 'UI/UX Design',
       contactTitle: 'Contact',
       location: 'São Paulo, SP - Brazil',
-      copyright: '2025 Startup Infosoftware Ltd. All rights reserved.',
+      copyright: 'Startup Infosoftware Ltd. All rights reserved.',
       privacy: 'Privacy Policy',
-      terms: 'Terms of Use'
+      terms: 'Terms of Use',
+      lastUpdate: 'Last update'
     },
     landingPage: {
       hero: {
