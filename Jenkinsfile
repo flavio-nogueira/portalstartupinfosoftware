@@ -21,7 +21,7 @@ pipeline {
       steps {
         git branch: "${env.GIT_BRANCH}",
             credentialsId: 'github-token',
-            url: 'https://github.com/seu-usuario/infosoftware-portal.git'
+            url: 'https://github.com/flavio-nogueira/portalstartupinfosoftware.git'
       }
     }
 
