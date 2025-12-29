@@ -1,0 +1,113 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="container">
+    <div class="logo">
+      <h2>Startup Infosoftware</h2>
+    </div>
+    <nav class="nav" [class.active]="menuOpen">
+      <a href="/#home" (click)="closeMenu()">{{ t('header.home') }}</a>
+      <a routerLink="/landing-page" (click)="closeMenu()">{{ t('header.site') }}</a>
+      <a routerLink="/mobile" (click)="closeMenu()">{{ t('header.mobile') }}</a>
+      <a href="/#services" (click)="closeMenu()">{{ t('header.services') }}</a>
+      <a routerLink="/about" (click)="closeMenu()">{{ t('header.about') }}</a>
+      <a href="/#contact" (click)="closeMenu()">{{ t('header.contact') }}</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-selector">
+        <button class="lang-btn" (click)="toggleLangMenu()" [attr.aria-label]="'Selecionar idioma'">
+          @if (getCurrentLanguage() === 'pt') {
+            <svg class="flag-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#009b3a" d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"/>
+              <path fill="#fedf00" d="M32.728 18L18 29.124 3.272 18 18 6.875z"/>
+              <circle fill="#002776" cx="18" cy="18" r="4.5"/>
+              <path fill="#FFF" d="M14 17.5c0-2.209 1.791-4 4-4s4 1.791 4 4"/>
+            </svg>
+          } @else if (getCurrentLanguage() === 'es') {
+            <svg class="flag-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#C60B1E" d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"/>
+              <path fill="#FFC400" d="M0 12h36v12H0z"/>
+            </svg>
+          } @else {
+            <svg class="flag-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#B22234" d="M0 0h36v36H0z"/>
+              <path d="M0 6.462h36M0 13.385h36M0 20.308h36M0 27.231h36" stroke="#FFF" stroke-width="2.769"/>
+              <path fill="#3C3B6E" d="M0 0h14.769v19.385H0z"/>
+              <g fill="#FFF">
+                <circle cx="2.462" cy="2.462" r=".923"/>
+                <circle cx="7.385" cy="2.462" r=".923"/>
+                <circle cx="12.308" cy="2.462" r=".923"/>
+                <circle cx="4.923" cy="4.923" r=".923"/>
+                <circle cx="9.846" cy="4.923" r=".923"/>
+                <circle cx="2.462" cy="7.385" r=".923"/>
+                <circle cx="7.385" cy="7.385" r=".923"/>
+                <circle cx="12.308" cy="7.385" r=".923"/>
+                <circle cx="4.923" cy="9.846" r=".923"/>
+                <circle cx="9.846" cy="9.846" r=".923"/>
+                <circle cx="2.462" cy="12.308" r=".923"/>
+                <circle cx="7.385" cy="12.308" r=".923"/>
+                <circle cx="12.308" cy="12.308" r=".923"/>
+                <circle cx="4.923" cy="14.769" r=".923"/>
+                <circle cx="9.846" cy="14.769" r=".923"/>
+                <circle cx="2.462" cy="17.231" r=".923"/>
+                <circle cx="7.385" cy="17.231" r=".923"/>
+                <circle cx="12.308" cy="17.231" r=".923"/>
+              </g>
+            </svg>
+          }
+        </button>
+        <div class="lang-menu" [class.active]="langMenuOpen">
+          <button (click)="setLanguage('pt')" [class.active]="getCurrentLanguage() === 'pt'">
+            <svg class="flag-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#009b3a" d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"/>
+              <path fill="#fedf00" d="M32.728 18L18 29.124 3.272 18 18 6.875z"/>
+              <circle fill="#002776" cx="18" cy="18" r="4.5"/>
+              <path fill="#FFF" d="M14 17.5c0-2.209 1.791-4 4-4s4 1.791 4 4"/>
+            </svg>
+            <span>Português</span>
+          </button>
+          <button (click)="setLanguage('es')" [class.active]="getCurrentLanguage() === 'es'">
+            <svg class="flag-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#C60B1E" d="M36 27a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V9a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v18z"/>
+              <path fill="#FFC400" d="M0 12h36v12H0z"/>
+            </svg>
+            <span>Español</span>
+          </button>
+          <button (click)="setLanguage('en')" [class.active]="getCurrentLanguage() === 'en'">
+            <svg class="flag-icon" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#B22234" d="M0 0h36v36H0z"/>
+              <path d="M0 6.462h36M0 13.385h36M0 20.308h36M0 27.231h36" stroke="#FFF" stroke-width="2.769"/>
+              <path fill="#3C3B6E" d="M0 0h14.769v19.385H0z"/>
+              <g fill="#FFF">
+                <circle cx="2.462" cy="2.462" r=".923"/>
+                <circle cx="7.385" cy="2.462" r=".923"/>
+                <circle cx="12.308" cy="2.462" r=".923"/>
+                <circle cx="4.923" cy="4.923" r=".923"/>
+                <circle cx="9.846" cy="4.923" r=".923"/>
+                <circle cx="2.462" cy="7.385" r=".923"/>
+                <circle cx="7.385" cy="7.385" r=".923"/>
+                <circle cx="12.308" cy="7.385" r=".923"/>
+                <circle cx="4.923" cy="9.846" r=".923"/>
+                <circle cx="9.846" cy="9.846" r=".923"/>
+                <circle cx="2.462" cy="12.308" r=".923"/>
+                <circle cx="7.385" cy="12.308" r=".923"/>
+                <circle cx="12.308" cy="12.308" r=".923"/>
+                <circle cx="4.923" cy="14.769" r=".923"/>
+                <circle cx="9.846" cy="14.769" r=".923"/>
+                <circle cx="2.462" cy="17.231" r=".923"/>
+                <circle cx="7.385" cy="17.231" r=".923"/>
+                <circle cx="12.308" cy="17.231" r=".923"/>
+              </g>
+            </svg>
+            <span>English</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-label]="menuOpen ? 'Fechar menu' : 'Abrir menu'">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

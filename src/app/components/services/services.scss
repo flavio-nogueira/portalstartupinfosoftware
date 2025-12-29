@@ -1,0 +1,134 @@
+.services {
+  padding: 6rem 0;
+  background: #0a1929;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 4px;
+        background: #3B82F6;
+        border-radius: 2px;
+      }
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #94a3b8;
+      margin-top: 1.5rem;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    .service-card {
+      background: rgba(15, 31, 46, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 50px rgba(59, 130, 246, 0.3);
+        border-color: #3B82F6;
+
+        .service-icon {
+          transform: scale(1.2) rotate(5deg);
+        }
+      }
+
+      .service-icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        transition: transform 0.3s ease;
+
+        svg {
+          width: 4rem;
+          height: 4rem;
+          filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.2));
+        }
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      p {
+        color: #94a3b8;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 0.6rem 0;
+          color: #cbd5e1;
+          position: relative;
+          padding-left: 1.5rem;
+          font-size: 0.95rem;
+
+          &::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #3B82F6;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 968px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-header .section-title {
+      font-size: 2rem;
+    }
+  }
+}

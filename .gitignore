@@ -1,0 +1,33 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+/dist
+/.angular
+.angular/cache
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build
+/build
+/out-tsc
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+/coverage
+*.log
